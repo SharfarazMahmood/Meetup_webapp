@@ -13,12 +13,13 @@
       </v-layout>
       <v-layout row wrap class="mb-2">
         <v-flex xs12>
-          <v-carousel>
+          <v-carousel style="cursor: pointer">
             <v-carousel-item
               v-for="(item, i) in meetups"
               :key="i"
               :title="item.title"
               :src="item.imageUrl"
+              @click="onLoadMeetup(item.id)"
             >
               <v-flex xs12 class="title text-center">
                 <div class="">{{ item.title }}</div>
@@ -34,31 +35,17 @@
 <script>
 export default {
   name: "HomeView",
-
-  data: () => ({
-    meetups: [
-      {
-        id: "1",
-        title: "Meetup in Berlin",
-        imageUrl: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
-      },
-      {
-        id: "2",
-        title: "Meetup in Quater",
-        imageUrl: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-      },
-      {
-        id: "3",
-        title: "Meetup in Astria",
-        imageUrl: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-      },
-      {
-        id: "4",
-        title: "Meetup in UK",
-        imageUrl: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-      },
-    ],
-  }),
+  computed: {
+    meetups() {
+      return this.$store.getters.featuredMeetups;
+    },
+  },
+  data: () => ({}),
+  methods: {
+    onLoadMeetup(id) {
+      this.$router.push("/meetup/" + id);
+    },
+  },
 };
 </script>
 

@@ -16,6 +16,8 @@ export default new Vuetify({
         accent: colors.shades.black,
         info: colors.lightBlue,
         error: colors.red.accent3,
+        success: "#4CAF50",
+        warning: "#FFC107",
       },
       dark: {
         primary: colors.teal,
@@ -23,6 +25,8 @@ export default new Vuetify({
         accent: colors.shades.black,
         info: colors.lightBlue,
         error: colors.red.accent3,
+        success: "#4CAF50",
+        warning: "#FFC107",
       },
     },
   },

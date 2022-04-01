@@ -3,9 +3,8 @@
     <v-app-bar app dark absolute color="primary">
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
-        class="hidden-md-and-up"
+        class="//hidden-md-and-up"
       ></v-app-bar-nav-icon>
-
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           DevMeetup
@@ -72,7 +71,6 @@
 </template>
 
 <script>
-
 export default {
   name: "App",
   data: () => ({
@@ -104,4 +102,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped></style>
+<style scoped></style>
