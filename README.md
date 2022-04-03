@@ -23,17 +23,21 @@ A website where useres can
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/homepage.png) -->
 
 All meetups
+
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/app_drawer_all_meetups.png)
 
 All meetups (with responsiveness)
+
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups.png)
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups_smaller_view.png)
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups_smallest_view.png)
 
 Create a new meet ups
+
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/create_meetup_page..png)
 
 Meet up details page
+
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/meetup_details.png)
 
 ## Project setup
