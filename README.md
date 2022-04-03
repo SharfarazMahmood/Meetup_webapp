@@ -2,7 +2,13 @@
 
 ### A demo website developed as a learning project.
 
-A website where useres can organinze, find and join meet ups.
+A website where useres can
+
+- organinze new meet up
+- find th meet up they are looking for
+- join meet ups.
+
+### Screenshots of the website
 
 Homepage
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/homepage.png)
