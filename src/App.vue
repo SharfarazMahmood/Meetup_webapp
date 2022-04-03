@@ -79,7 +79,7 @@ export default {
     selectedItem: 1,
     menuItems: [
       {
-        title: "View Meetups",
+        title: "All Meetups",
         icon: "mdi-account-supervisor",
         link: "/meetups",
       },
