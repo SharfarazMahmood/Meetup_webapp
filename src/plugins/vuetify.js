@@ -11,8 +11,8 @@ export default new Vuetify({
     dark: false,
     themes: {
       light: {
-        primary: colors.teal,
-        secondary: colors.grey.darken1,
+        primary: "#d76232",
+        secondary: "#50aadf",
         accent: colors.shades.black,
         info: colors.lightBlue,
         error: colors.red.accent3,
@@ -20,8 +20,8 @@ export default new Vuetify({
         warning: "#FFC107",
       },
       dark: {
-        primary: colors.teal,
-        secondary: colors.grey.darken1,
+        primary: "#d76232",
+        secondary: "#50aadf",
         accent: colors.shades.black,
         info: colors.lightBlue,
         error: colors.red.accent3,

@@ -13,6 +13,7 @@
                   <thead>
                     <tr>
                       <th class="text-left titleOrDatetruncate">Title</th>
+                      <th class="text-left ma-0 pa-0"></th>
                       <th class="text-left titleOrDatetruncate">Date</th>
                       <th class="text-left imgUrlOrdescriptiontruncate">
                         Image Url
@@ -29,8 +30,21 @@
                       :key="item.id"
                       @click="goToMeetupDetails(item.id)"
                     >
-                      <td class="titleOrDatetruncate">{{ item.title }}</td>
-                      <td class="titleOrDatetruncate">{{ item.date }}</td>
+                      <td class="titletruncate mr-0 pr-0">
+                        {{ item.title }}
+                      </td>
+                      <td class="ma-0 pa-0">
+                        <v-icon
+                          class="ma-0 pa-0"
+                          :disabled="item.setReminder"
+                          color="primary"
+                          height="16px"
+                          width="16px"
+                        >
+                          mdi-star
+                        </v-icon>
+                      </td>
+                      <td class="Datetruncate">{{ item.date }}</td>
                       <td class="imgUrlOrdescriptiontruncate">
                         {{ item.imageUrl }}
                       </td>
@@ -107,13 +121,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      tab: null,
-      items: ["Table View", "Card view"],
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    };
-  },
   methods: {
     goToMeetupDetails(id) {
       console.log(id);
@@ -129,8 +136,16 @@ export default {
 </script>
 
 <style>
-.titleOrDatetruncate {
-  max-width: 10vw;
+.titletruncate {
+  max-width: 6vw;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.Datetruncate {
+  max-width: 8vw;
   white-space: nowrap;
   overflow: hidden;
   overflow-x: hidden;
