@@ -1,36 +1,41 @@
 # meetup_app
 
-### A demo website developed as a learning project.
+> ## Goal of this project:
+>
+> ### Create a responsive table where the rows does not break when the display size changes
 
-A website where useres can
+<!-- ### A demo website developed to learn and use Vue.js, Vuetify -->
+
+## Features
+
+This is a website where useres can
 
 - organinze new meet up
-- find th meet up they are looking for
+- find the meet up they are looking for
 - join meet ups.
 
-# Technologies
+## Technologies
 
 - Vue.js 2
 - Vuetify
+- Vue cli
 - HTML
 - CSS
 - Javascript
-- Vue cli
 
 ### Screenshots of the website
 
 <!-- Homepage
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/homepage.png) -->
 
-All meetups
-
-![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/app_drawer_all_meetups.png)
-
-All meetups (with responsiveness)
+All meetups (table) (with responsiveness)
 
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups.png)
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups_smaller_view.png)
 ![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/all_meetups_smallest_view.png)
+
+Navigation Drawer
+![image description](https://raw.githubusercontent.com/SharfarazMahmood/Meetup_webapp/main/screenshots/app_drawer_all_meetups.png)
 
 Create a new meet ups
 
