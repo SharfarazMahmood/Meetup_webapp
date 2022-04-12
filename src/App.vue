@@ -77,23 +77,47 @@ export default {
     drawer: false,
     group: null,
     selectedItem: 1,
-    menuItems: [
-      {
-        title: "All Meetups",
-        icon: "mdi-account-supervisor",
-        link: "/meetups",
-      },
-      {
-        title: "Create meeting",
-        icon: "mdi-google-classroom",
-        link: "/meetup/create",
-      },
-      { title: "Profile", icon: "mdi-account-circle", link: "/profile" },
-      { title: "Sign up", icon: "mdi-account-plus", link: "/signup" },
-      { title: "Sign in", icon: "mdi-login", link: "/signin" },
-    ],
   }),
+  computed: {
+    userIsAuthenticated() {
+      return (
+        this.$store.getters.user !== null &&
+        this.store.getters.user !== undefined
+      );
+    },
+    menuItems() {
+      let menuItems = [
+        {
+          title: "All Meetups",
+          icon: "mdi-account-supervisor",
+          link: "/meetups",
+        },
+        {
+          title: "Create meeting",
+          icon: "mdi-google-classroom",
+          link: "/meetup/create",
+        },
+        { title: "Profile", icon: "mdi-account-circle", link: "/profile" },
+        { title: "Sign up", icon: "mdi-account-plus", link: "/signup" },
+        { title: "Sign in", icon: "mdi-login", link: "/signin" },
+      ];
 
+      // if (this.userIsAuthenticated) {
+      //   (menuItems = {
+      //     title: "All Meetups",
+      //     icon: "mdi-account-supervisor",
+      //     link: "/meetups",
+      //   }),
+      //     {
+      //       title: "Create meeting",
+      //       icon: "mdi-google-classroom",
+      //       link: "/meetup/create",
+      //     },
+      //     { title: "Profile", icon: "mdi-account-circle", link: "/profile" };
+      // }
+      return menuItems;
+    },
+  },
   watch: {
     group() {
       this.drawer = false;

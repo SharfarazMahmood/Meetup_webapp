@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
-        <h1 class="primary--text ma-0">Create New Meetup</h1>
+        <h1 class="primary--text ma-0 pa-0">Create New Meetup</h1>
       </v-flex>
     </v-layout>
     <v-layout row>
@@ -11,7 +11,7 @@
           <v-layout row>
             <v-flex xs12>
               <v-text-field
-                v-model="form.title"
+                v-model="title"
                 name="Title"
                 label="Title"
                 id="title"
@@ -24,7 +24,7 @@
           <v-layout row>
             <v-flex xs12>
               <v-text-field
-                v-model="form.location"
+                v-model="location"
                 name="location"
                 label="Location"
                 id="location"
@@ -38,7 +38,7 @@
           <v-layout row>
             <v-flex xs12>
               <v-text-field
-                v-model="form.imageUrl"
+                v-model="imageUrl"
                 name="imageUrl"
                 label="Image Url"
                 id="imageUrl"
@@ -51,13 +51,13 @@
           </v-layout>
           <v-layout row>
             <v-flex xs12>
-              <img height="200px" :src="form.imageUrl" alt="" srcset="" />
+              <img height="200px" :src="imageUrl" alt="" srcset="" />
             </v-flex>
           </v-layout>
           <v-layout row>
             <v-flex xs12>
               <v-textarea
-                v-model="form.description"
+                v-model="description"
                 color="teal"
                 :rules="rules.description"
                 required
@@ -68,6 +68,23 @@
                   <div>Description <small></small></div>
                 </template>
               </v-textarea>
+            </v-flex>
+          </v-layout>
+
+          <v-layout row>
+            <v-flex xs6>
+              <h4>Choose Date</h4>
+              <v-date-picker v-model="date" scrollable> </v-date-picker>
+              <!-- <p>{{ date }}</p> -->
+              <!-- <p>{{ submitableDateTime }}</p> -->
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs6>
+              <h4>Choose time</h4>
+              <v-time-picker v-model="time" format="ampm" scrollable>
+              </v-time-picker>
+              <!-- <p>{{ time }}</p> -->
             </v-flex>
           </v-layout>
 
@@ -98,10 +115,22 @@ export default {
       imageUrl: "",
       location: "",
       description: "",
-      terms: false,
+      setReminder: true,
     });
 
     return {
+      menuDate: false,
+      menuTime: false,
+      title: "",
+      imageUrl: "",
+      location: "",
+      description: "",
+      setReminder: true,
+      date: null,
+      menu: false,
+      modal: false,
+      menu2: false,
+      time: new Date(),
       form: Object.assign({}, form),
       rules: {
         title: [(val) => (val || "").length > 0 || "Title is required"],
@@ -117,11 +146,29 @@ export default {
   computed: {
     formIsValid() {
       return (
-        this.form.title !== "" &&
-        this.form.imageUrl !== "" &&
-        this.form.location !== "" &&
-        this.form.description !== ""
+        this.title !== "" &&
+        this.imageUrl !== "" &&
+        this.location !== "" &&
+        this.description !== ""
       );
+    },
+    submitableDateTime() {
+      const date = new Date(this.date);
+      if (typeof this.time === "string") {
+        // console.log(typeof this.time);
+        let hours = this.time.match(/^(\d+)/)[1];
+        const mins = this.time.match(/:(\d+)/)[1];
+
+        date.setHours(hours);
+        date.setMinutes(mins);
+      } else {
+        // console.log(typeof this.time);
+        date.setHours(this.time.getHours());
+        date.setMinutes(this.time.getMinutes());
+      }
+      // console.log(date);
+
+      return date;
     },
   },
   methods: {
@@ -130,11 +177,11 @@ export default {
         return;
       }
       const meetupDate = {
-        title: this.form.title,
-        location: this.form.location,
-        imageUrl: this.form.imageUrl,
-        description: this.form.description,
-        date: new Date(),
+        title: this.title,
+        location: this.location,
+        imageUrl: this.imageUrl,
+        description: this.description,
+        date: this.submitableDateTime,
       };
 
       this.$store.dispatch("createMeetup", meetupDate);

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card class="" style="overflow-x: hidden">
-      <v-tabs v-model="tab" align-with-title>
+      <v-tabs align-with-title>
         <v-tabs-slider color="blue mb-1"></v-tabs-slider>
 
         <v-tab href="#tableView"> Table view </v-tab>
@@ -44,7 +44,9 @@
                           mdi-star
                         </v-icon>
                       </td>
-                      <td class="Datetruncate">{{ item.date }}</td>
+                      <td class="Datetruncate">
+                        {{ item.date | dateFormater }}
+                      </td>
                       <td class="imgUrlOrdescriptiontruncate">
                         {{ item.imageUrl }}
                       </td>
